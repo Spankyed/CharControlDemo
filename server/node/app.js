@@ -16,11 +16,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 // view engine setup
-app.set('views', __dirname + '/views');
+app.set('views', path.join(__dirname, '..', '..', 'web/views'));
 app.set('view engine', 'ejs');
 app.engine('html', require('ejs').renderFile);
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '..', '..', 'web/public')));
 app.use(express.static(path.join(__dirname, 'node_modules')));
 
 
